@@ -3,4 +3,14 @@
     <string name="startMenu">Start</string>
     <string name="scoreMenu">Score</string>
     <string name="quitMenu">Quit</string>
+    <string-array name="fruitsSelection">
+        <item>Strawberry</item>
+        <item>Apple</item>
+        <item>Orange</item>
+        <item>Raspberry</item>
+        <item>Kiwi</item>
+        <item>Lemon</item>
+        <item>Grape</item>
+        <item>Plum</item>
+    </string-array>
 </resources>

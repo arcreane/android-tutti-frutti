@@ -55,19 +55,20 @@
             android:layout_height="match_parent">
 
             <RadioButton
-                android:id="@+id/radioButton3"
+                android:id="@+id/radioButtonEasy"
                 android:layout_width="match_parent"
+                android:onClick="getEasy"
                 android:layout_height="wrap_content"
                 android:text="Easy" />
 
             <RadioButton
-                android:id="@+id/radioButton"
+                android:id="@+id/radioButtonMedium"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Medium" />
 
             <RadioButton
-                android:id="@+id/radioButton2"
+                android:id="@+id/radioButtonHard"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Hard" />

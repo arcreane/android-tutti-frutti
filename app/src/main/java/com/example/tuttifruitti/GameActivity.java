@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class GameActivity extends AppCompatActivity {
@@ -95,7 +96,18 @@ public class GameActivity extends AppCompatActivity {
           String randomFruit2 = array[new Random().nextInt(array.length)];
           String randomFruit3 = array[new Random().nextInt(array.length)];
           String randomFruit4 = array[new Random().nextInt(array.length)];
-          String[] arrayRandomFruit = { randomFruit1, randomFruit2, randomFruit3, randomFruit4 };
+          String[] arrayRandomFruit = {randomFruit1, randomFruit2, randomFruit3, randomFruit4};
+
+        }
+
+
+        // Méthode permettant de comparer l'entre utilisateur et le resultat au hasard de la machine
+        public void resultComparaison() {
+
+
+        if(){}
+
+        else {}
 
         }
 

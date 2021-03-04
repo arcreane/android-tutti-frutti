@@ -235,6 +235,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:textSize="10dp"
             android:text="Menu return"/>
 
 
@@ -243,12 +244,27 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"/>
 
+
         <Button
             android:id="@+id/changeDifficultyButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Change difficulty" />
+            android:textSize="10dp"
+            android:text="Change difficulty"
+            android:layout_weight="1"/>
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/getHintsButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10dp"
+            android:text="Get hints"
+            android:layout_weight="1"/>
 
     </LinearLayout>
 

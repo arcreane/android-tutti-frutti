@@ -86,6 +86,7 @@
         >
 
         <Button
+            android:id="@+id/validateChoiceButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
@@ -94,11 +95,53 @@
 
     </LinearLayout>
 
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/userChoiceContainer"
+        android:layout_below="@id/validateChoiceContainer"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Your combinaison is : "
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/printChoice1"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/printChoice2"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/printChoice3"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/printChoice4"
+            />
+
+
+
+    </LinearLayout>
+
     <LinearLayout
         android:id="@+id/progressBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/validateChoiceContainer">
+        android:layout_below="@id/userChoiceContainer">
 
         <ProgressBar
             android:id="@+id/triesProgressBar"
@@ -122,14 +165,6 @@
 
 
     </LinearLayout>
-
-
-    // Tableau contenant les fruits
-    <ListView
-        android:id="@+id/listView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    </ListView>
 
     <LinearLayout
         android:id="@+id/listeViewFruitsContainer"
@@ -186,6 +221,34 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/raisins" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        >
+
+        <Button
+            android:id="@+id/menuReturnButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Menu return"/>
+
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/changeDifficultyButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Change difficulty" />
 
     </LinearLayout>
 

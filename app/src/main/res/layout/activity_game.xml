@@ -120,5 +120,72 @@
     </LinearLayout>
 
 
+    // Tableau contenant les fruits
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </ListView>
+
+    <LinearLayout
+        android:id="@+id/listeViewFruitsContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/progressBarLayout"
+        android:orientation="horizontal"
+        android:weightSum="8">
+
+        <ImageView
+            android:id= "@+id/imageBananas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/bananes" />
+
+        <ImageView
+            android:id= "@+id/imageLemon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/citron" />
+
+        <ImageView
+            android:id= "@+id/imageStrawberry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/fraise" />
+
+        <ImageView
+            android:id= "@+id/imageRaspberries"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/framboises" />
+
+        <ImageView
+            android:id= "@+id/imageKiwi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/kiwi" />
+
+        <ImageView
+            android:id= "@+id/imageOrange"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/orange" />
+
+        <ImageView
+            android:id= "@+id/imagePlum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/prune" />
+
+        <ImageView
+            android:id= "@+id/imageGrape"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/raisins" />
+
+    </LinearLayout>
+
+
+
 
 </RelativeLayout>

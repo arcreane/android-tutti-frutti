@@ -16,16 +16,17 @@ public class MainActivity extends AppCompatActivity {
 
 
         Button startButton = findViewById(R.id.bt_start);
-
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 setContentView(R.layout.activity_difficulty);
+                // Liaison avec l'activité Difficulty
+                Intent intent = new Intent(MainActivity.this, GameActivity.class);
+                startActivity(intent);
                 }
             });
 
         Button scoreButton = findViewById(R.id.bt_score);
-
         scoreButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -35,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
 
 
         Button quitButton = findViewById(R.id.bt_quit);
-
         quitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

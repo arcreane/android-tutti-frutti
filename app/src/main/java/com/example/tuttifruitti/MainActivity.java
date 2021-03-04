@@ -19,9 +19,8 @@ public class MainActivity extends AppCompatActivity {
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setContentView(R.layout.activity_difficulty);
                 // Liaison avec l'activité Difficulty
-                Intent intent = new Intent(MainActivity.this, GameActivity.class);
+                Intent intent = new Intent("com.example.tuttifruitti.Difficulty");
                 startActivity(intent);
                 }
             });

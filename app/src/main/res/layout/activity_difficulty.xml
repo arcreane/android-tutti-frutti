@@ -5,59 +5,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/gameScreen"
     android:padding="20dp"
-    tools:context=".MainActivity">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/scoreContainer"
-        android:orientation="horizontal"
-        >
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Total score : "
-            android:textSize="25dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="0"
-            android:textSize="25dp"/>
+    tools:context=".Difficulty">
 
 
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Tries left :"
-            android:textSize="25dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="10"
-            android:textSize="25dp"/>
-    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/difficulty"
-        android:layout_below="@id/scoreContainer">
+        android:orientation="horizontal" >
+
+
         <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="Please, choose your difficulty : " />
+
             <RadioButton
                 android:id="@+id/radioButtonEasy"
                 android:layout_width="match_parent"
-                android:onClick="getEasy"
                 android:layout_height="wrap_content"
                 android:text="Easy" />
 

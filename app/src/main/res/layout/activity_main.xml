@@ -20,6 +20,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
+            android:onClick="startGame"
             android:text="@string/startMenu" />
 
         <Button
@@ -28,6 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
+            android:onClick="showScores"
             android:text="@string/scoreMenu" />
 
         <Button
@@ -36,6 +38,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
+            android:onClick="quitGame"
             android:text="@string/quitMenu" />
     </LinearLayout>
 </RelativeLayout>

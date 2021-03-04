@@ -18,13 +18,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Total score : "
-            android:textSize="25dp"></TextView>
+            android:textSize="25dp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="0"
-            android:textSize="25dp"></TextView>
+            android:textSize="25dp"/>
 
 
         <Space
@@ -36,13 +36,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Tries left :"
-            android:textSize="25dp"></TextView>
+            android:textSize="25dp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="10"
-            android:textSize="25dp"></TextView>
+            android:textSize="25dp"/>
     </LinearLayout>
 
     <LinearLayout

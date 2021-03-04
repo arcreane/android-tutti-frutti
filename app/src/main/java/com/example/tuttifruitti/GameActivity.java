@@ -1,12 +1,11 @@
 package com.example.tuttifruitti;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
+import android.widget.TextView;
+
+import java.util.Random;
 
 public class GameActivity extends AppCompatActivity {
 
@@ -15,8 +14,21 @@ public class GameActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
+        getRandomFruit();
 
     }
+
+
+      public void getRandomFruit() {
+          String[] array = getResources().getStringArray(R.array.fruitsSelection);
+          String randomFruit1 = array[new Random().nextInt(array.length)];
+          String randomFruit2 = array[new Random().nextInt(array.length)];
+          String randomFruit3 = array[new Random().nextInt(array.length)];
+          String randomFruit4 = array[new Random().nextInt(array.length)];
+          String[] arrayRandomFruit = { randomFruit1, randomFruit2, randomFruit3, randomFruit4 };
+          
+        }
+
 
 }
 

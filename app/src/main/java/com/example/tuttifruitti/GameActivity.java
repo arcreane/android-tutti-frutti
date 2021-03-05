@@ -1,25 +1,40 @@
 package com.example.tuttifruitti;
 
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Arrays;
+import java.util.Objects;
 import java.util.Random;
 
+import static java.lang.Math.random;
+import static java.time.chrono.JapaneseEra.values;
+
 public class GameActivity extends AppCompatActivity {
-
-
+    String randomFruit1,randomFruit2,randomFruit3,randomFruit4;
+    String spinnerChoice1,spinnerChoice2,spinnerChoice3,spinnerChoice4;
+    public String[] arrayRandomFruit = {randomFruit1, randomFruit2, randomFruit3, randomFruit4};
+    public String[] arrayChoices={spinnerChoice1,spinnerChoice2,spinnerChoice3,spinnerChoice4};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
         getRandomFruit();
+        //getResult();
 
         Button validateChoiceButton = findViewById(R.id.validateChoiceButton);
         validateChoiceButton.setOnClickListener(new View.OnClickListener() {
@@ -30,33 +45,8 @@ public class GameActivity extends AppCompatActivity {
 
 
                 // Selectionner le choix du spinner et le transformer en string pour l'ajouter au tableau userEntryChoice
-                Spinner mySpinnerChoice1 = (Spinner) findViewById(R.id.spinnerChoice1);
-                String spinnerChoice1 = mySpinnerChoice1.getSelectedItem().toString();
-
-                Spinner mySpinnerChoice2 = (Spinner) findViewById(R.id.spinnerChoice2);
-                String spinnerChoice2 = mySpinnerChoice2.getSelectedItem().toString();
-
-                Spinner mySpinnerChoice3 = (Spinner) findViewById(R.id.spinnerChoice3);
-                String spinnerChoice3 = mySpinnerChoice3.getSelectedItem().toString();
-
-                Spinner mySpinnerChoice4 = (Spinner) findViewById(R.id.spinnerChoice4);
-                String spinnerChoice4 = mySpinnerChoice4.getSelectedItem().toString();
-
-                userEntryChoice = new String[] {spinnerChoice1, spinnerChoice2, spinnerChoice3, spinnerChoice4};
-
-
-                //Set textView les choix du user sur le layout
-                TextView choixUser1 = findViewById(R.id.printChoice1);
-                choixUser1.setText(userEntryChoice[0]);
-
-                TextView choixUser2 = findViewById(R.id.printChoice2);
-                choixUser2.setText(userEntryChoice[1]);
-
-                TextView choixUser3 = findViewById(R.id.printChoice3);
-                choixUser3.setText(userEntryChoice[2]);
-
-                TextView choixUser4 = findViewById(R.id.printChoice4);
-                choixUser4.setText(userEntryChoice[3]);
+               getChoices();
+                playGame();
 
 
             }
@@ -92,24 +82,113 @@ public class GameActivity extends AppCompatActivity {
 
       public void getRandomFruit() {
           String[] array = getResources().getStringArray(R.array.fruitsSelection);
-          String randomFruit1 = array[new Random().nextInt(array.length)];
-          String randomFruit2 = array[new Random().nextInt(array.length)];
-          String randomFruit3 = array[new Random().nextInt(array.length)];
-          String randomFruit4 = array[new Random().nextInt(array.length)];
+
+
+          //do{
           String[] arrayRandomFruit = {randomFruit1, randomFruit2, randomFruit3, randomFruit4};
 
+
+          randomFruit1 = array[new Random().nextInt(array.length)];
+          randomFruit2 = array[new Random().nextInt(array.length)];
+          randomFruit3 = array[new Random().nextInt(array.length)];
+          randomFruit4 = array[new Random().nextInt(array.length)];
+
+          //}while (!(randomFruit1.equals(randomFruit2)) && !(randomFruit1.equals(randomFruit3)) && !(randomFruit1.equals(randomFruit4)) && !(randomFruit2.equals(randomFruit3)) && !(randomFruit2.equals(randomFruit4)) && !(randomFruit3.equals(randomFruit4)));
+          TextView myRan = findViewById(R.id.testrandom);
+          myRan.setText(randomFruit1 + randomFruit2 + randomFruit3 + randomFruit4);
+
+      }
+
+
+        // Méthode permettant de recuperer les choices de fruits
+        public void getChoices(){
+            String[] array = getResources().getStringArray(R.array.fruitsSelection);
+            Spinner mySpinnerChoice1 = (Spinner) findViewById(R.id.spinnerChoice1);
+            spinnerChoice1 = mySpinnerChoice1.getSelectedItem().toString();
+
+            Spinner mySpinnerChoice2 = (Spinner) findViewById(R.id.spinnerChoice2);
+            spinnerChoice2 = mySpinnerChoice2.getSelectedItem().toString();
+
+            Spinner mySpinnerChoice3 = (Spinner) findViewById(R.id.spinnerChoice3);
+            spinnerChoice3 = mySpinnerChoice3.getSelectedItem().toString();
+
+            Spinner mySpinnerChoice4 = (Spinner) findViewById(R.id.spinnerChoice4);
+            spinnerChoice4 = mySpinnerChoice4.getSelectedItem().toString();
+
+            String[] userEntryChoice = {spinnerChoice1, spinnerChoice2, spinnerChoice3, spinnerChoice4};
+
+            TextView choixUser1 = findViewById(R.id.printChoice1);
+            choixUser1.setText(userEntryChoice[0]);
+
+            TextView choixUser2 = findViewById(R.id.printChoice2);
+            choixUser2.setText(userEntryChoice[1]);
+
+            TextView choixUser3 = findViewById(R.id.printChoice3);
+            choixUser3.setText(userEntryChoice[2]);
+
+            TextView choixUser4 = findViewById(R.id.printChoice4);
+            choixUser4.setText(userEntryChoice[3]);
+        }
+
+        // Methode pour pour comparer le user choice et le random result
+     public void setScore(){
+
+    for (int i = 1; i <9 ; i++) {
+        TextView score = findViewById(R.id.scoreNumber);
+        score.setText(i);
+
+    }
+}
+
+    public void playGame(){
+
+           //if ((randomFruit1.equals(spinnerChoice1) && randomFruit2.equals(spinnerChoice2)) && (randomFruit3.equals(spinnerChoice3)) && (randomFruit4.equals(spinnerChoice4)) ) {
+        String[] arrayRandomFruit = {randomFruit1, randomFruit2, randomFruit3, randomFruit4};
+        String[] arrayChoices={spinnerChoice1,spinnerChoice2,spinnerChoice3,spinnerChoice4};
+        for (int i = 0; i < arrayRandomFruit.length; i++) {
+            for (int j = 0; j < arrayChoices.length; j++) {
+                if (arrayRandomFruit[0].equals(arrayChoices[0]) && (arrayRandomFruit[1].equals(arrayChoices[1]))&& (arrayRandomFruit[2].equals(arrayChoices[2]))&& (arrayRandomFruit[3].equals(arrayChoices[3]))) {
+                    new AlertDialog.Builder(this)
+                            .setTitle("Well Done!!! :)")
+                            .setMessage("All fruits are well placed ")
+                            .setPositiveButton("Re-Play", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    setContentView(R.layout.activity_difficulty);
+                                    setScore();
+                                    finish();
+                                }
+                            })
+                            .show();
+
+                }
+                else if ((arrayRandomFruit[0].equals(arrayChoices[j]) && j!=0 ) || (arrayRandomFruit[1].equals(arrayChoices[j]) && j!=1 ) ||
+                (arrayRandomFruit[2].equals(arrayChoices[j]) && j!=2 ) || (arrayRandomFruit[3].equals(arrayChoices[j]) && j!=3 )){
+                    new AlertDialog.Builder(this)
+                            .setTitle(" Well :)")
+                            .setMessage("you have a good Choice in a Bad Place ")
+                            .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    Toast.makeText(getApplicationContext(),"Please try Chosing again !", Toast.LENGTH_LONG).show();
+                                    setContentView(R.layout.activity_game);
+                                    finish();
+                                }
+                            })
+                            .show();
+                }
+                //else if((arrayRandomFruit[1]
+
+
+            }
         }
 
 
-        // Méthode permettant de comparer l'entre utilisateur et le resultat au hasard de la machine
-        public void resultComparaison() {
 
+       // }
 
-        if(){}
+    }
 
-        else {}
-
-        }
 
 
 

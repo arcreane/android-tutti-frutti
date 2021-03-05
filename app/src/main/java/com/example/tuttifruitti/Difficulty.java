@@ -6,6 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.TextView;
 
 public class Difficulty extends AppCompatActivity {
 
@@ -25,6 +28,9 @@ public class Difficulty extends AppCompatActivity {
         });
 
 
+        //chooseLevel();
+
+
         Button returnButton = findViewById(R.id.returnButton);
         returnButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,4 +43,54 @@ public class Difficulty extends AppCompatActivity {
 
 
     }
+
+    public void chooseLevel() {
+        RadioButton myButton = null;
+        if (myButton == findViewById(R.id.radioButtonEasy)) {
+
+            myButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent1 = new Intent("com.example.tuttifruitti.Difficulty");
+                    startActivity(intent1);
+                    TextView tries = findViewById(R.id.tries);
+                    tries.setText("10");
+                    //play();
+
+                }
+            });
+        } else if (myButton == findViewById(R.id.radioButtonMedium)) {
+
+            myButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent1 = new Intent("com.example.tuttifruitti.Difficulty");
+                    startActivity(intent1);
+                    TextView tries = findViewById(R.id.tries);
+                    tries.setText("7");
+                    //play();
+
+                }
+            });
+        } else if (myButton == findViewById(R.id.radioButtonHard)) {
+
+            myButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent1 = new Intent("com.example.tuttifruitti.Difficulty");
+                    startActivity(intent1);
+                    TextView tries = findViewById(R.id.tries);
+                    tries.setText("5");
+                    //play();
+
+                }
+            });
+        } else {
+            throw new IllegalStateException("Unexpected value: " + myButton);
+        }
+    }
+
+
 }
+
+

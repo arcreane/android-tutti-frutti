@@ -50,6 +50,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/scoreContainer"
+        android:layout_marginTop="20dp"
         android:orientation="horizontal">
 
         <LinearLayout
@@ -62,8 +63,9 @@
             <ImageView
                 android:id="@+id/prop1"
                 android:layout_width="match_parent"
-                android:minHeight="75dp"
+                android:minHeight="45dp"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
                 android:src="@drawable/prune" />
 
 
@@ -87,7 +89,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:src="@drawable/prune"
-                android:minHeight="75dp"/>
+                android:layout_marginBottom="15dp"
+                android:minHeight="45dp"/>
 
             <Spinner
                 android:id="@+id/spinnerChoice2"
@@ -108,7 +111,8 @@
                 android:id="@+id/prop3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:minHeight="75dp"
+                android:minHeight="45dp"
+                android:layout_marginBottom="15dp"
                 android:src="@drawable/prune" />
 
             <Spinner
@@ -130,7 +134,8 @@
                 android:id="@+id/prop4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:minHeight="75dp"
+                android:minHeight="45dp"
+                android:layout_marginBottom="15dp"
                 android:src="@drawable/prune" />
 
             <Spinner
@@ -147,7 +152,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/choiceContainer"
-        android:orientation="vertical">
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp">
 
         <Button
             android:id="@+id/validateChoiceButton"
@@ -200,41 +207,61 @@
 
     </LinearLayout>
 
+
+
     <LinearLayout
-        android:id="@+id/progressBarLayout"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/userChoiceContainer">
+        android:id="@+id/buttonBarContainer"
+        android:layout_centerInParent="true"
+        android:layout_above="@id/listeViewFruitsContainer">
 
-        <ProgressBar
-            android:id="@+id/triesProgressBar"
-            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="fill_horizontal|center_vertical"
-            android:layout_weight="6"
-            android:max="10"
-            android:progress="7" />
-
-        <TextView
-            android:id="@+id/triesTextView"
+        <Button
+            android:id="@+id/menuReturnButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:gravity="end"
-            android:text="7"
-            android:textAlignment="textEnd"
-            android:textSize="24dp" />
+            android:text="Menu return"
+            android:textSize="10dp" />
 
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+
+        <Button
+            android:id="@+id/changeDifficultyButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Change difficulty"
+            android:textSize="10dp" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/getHintsButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Get hints"
+            android:textSize="10dp" />
 
     </LinearLayout>
 
     <LinearLayout
+        android:layout_marginTop="20dp"
         android:id="@+id/listeViewFruitsContainer"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/progressBarLayout"
         android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
         android:weightSum="8">
 
         <ImageView
@@ -284,49 +311,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/raisins" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true">
-
-        <Button
-            android:id="@+id/menuReturnButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Menu return"
-            android:textSize="10dp" />
-
-
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
-
-
-        <Button
-            android:id="@+id/changeDifficultyButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Change difficulty"
-            android:textSize="10dp" />
-
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
-
-        <Button
-            android:id="@+id/getHintsButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Get hints"
-            android:textSize="10dp" />
 
     </LinearLayout>
 

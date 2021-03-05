@@ -173,7 +173,7 @@ public class GameActivity extends AppCompatActivity {
 
           //}while (!(randomFruit1.equals(randomFruit2)) && !(randomFruit1.equals(randomFruit3)) && !(randomFruit1.equals(randomFruit4)) && !(randomFruit2.equals(randomFruit3)) && !(randomFruit2.equals(randomFruit4)) && !(randomFruit3.equals(randomFruit4)));
           TextView myRan = findViewById(R.id.testrandom);
-          myRan.setText(randomFruit1 + randomFruit2 + randomFruit3 + randomFruit4);
+          myRan.setText("Random : " + randomFruit1 + " - " + randomFruit2 + " - " + randomFruit3 + " - " + randomFruit4);
 
       }
 

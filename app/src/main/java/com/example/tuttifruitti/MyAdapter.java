@@ -1,12 +1,15 @@
 package com.example.tuttifruitti;
 
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.List;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
@@ -32,5 +35,49 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
             textViewChoice3 = (TextView) itemView.findViewById(R.id.recyclerChoice3);
             textViewChoice4 = (TextView) itemView.findViewById(R.id.recyclerChoice4);
         }
+    }
+    private List<DataSources> dataSourcesList;
+
+    public MyAdapter(List<DataSources> data) {
+        dataSourcesList = data;
+    }
+
+    @Override
+    public MyAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        Context context = parent.getContext();
+        LayoutInflater inflater = LayoutInflater.from(context);
+
+        // Inflate the custom layout
+        View dataView = inflater.inflate(R.layout.my_row, parent, false);
+
+        // Return a new holder instance
+        ViewHolder viewHolder = new ViewHolder(dataView);
+        return viewHolder;
+    }
+
+    // Involves populating data into the item through holder
+    @Override
+    public void onBindViewHolder(MyAdapter.ViewHolder holder, int position) {
+        // Get the data model based on position
+        DataSources data = dataSourcesList.get(position);
+
+        // Set item views based on your views and data model
+        TextView textView1 = holder.textViewChoice1;
+        textView1.setText("choix1");
+
+        TextView textView2 = holder.textViewChoice2;
+        textView2.setText("choix2");
+
+        TextView textView3 = holder.textViewChoice3;
+        textView3.setText("choix3");
+
+        TextView textView4 = holder.textViewChoice4;
+        textView4.setText("choix4");
+    }
+
+    // Returns the total count of items in the list
+    @Override
+    public int getItemCount() {
+        return dataSourcesList.size();
     }
 }

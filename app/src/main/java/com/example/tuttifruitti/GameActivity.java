@@ -1,18 +1,14 @@
 package com.example.tuttifruitti;
 
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
-import android.os.Build;
 import android.os.Bundle;
-import android.os.Vibrator;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -22,16 +18,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Dictionary;
-import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 import java.util.Random;
-
-import static java.lang.Math.random;
-import static java.time.chrono.JapaneseEra.values;
 
 public class GameActivity extends AppCompatActivity {
 
@@ -215,6 +204,13 @@ public class GameActivity extends AppCompatActivity {
             TextView choixUser4 = findViewById(R.id.printChoice4);
             choixUser4.setText(userEntryChoice[3]);
         }
+
+
+
+        //public static String[] getUserEntryChoiceArray() {
+        //return arrayChoices;
+        //}
+
 
         // Methode pour pour comparer le user choice et le random result
      public void setScore(){

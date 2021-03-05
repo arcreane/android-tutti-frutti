@@ -63,7 +63,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
         // Set item views based on your views and data model
         TextView textView1 = holder.textViewChoice1;
-        textView1.setText("choix1");
+        textView1.setText("choix 1");
 
         TextView textView2 = holder.textViewChoice2;
         textView2.setText("choix2");

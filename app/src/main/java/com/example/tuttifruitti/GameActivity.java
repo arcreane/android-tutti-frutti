@@ -78,6 +78,8 @@ public class GameActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
         Spinner myspinner1 = findViewById(R.id.spinnerChoice1);
         myspinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -94,11 +96,11 @@ public class GameActivity extends AppCompatActivity {
 
         });
         Spinner myspinner2 = findViewById(R.id.spinnerChoice2);
-        myspinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        myspinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 myspinner2.getItemAtPosition(position);
-                ImageView myImg = findViewById(R.id.prop1);
+                ImageView myImg = findViewById(R.id.prop2);
                 myImg.setImageDrawable(associate.get(myspinner2.getItemAtPosition(position)));
             }
 
@@ -113,7 +115,7 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 myspinner3.getItemAtPosition(position);
-                ImageView myImg = findViewById(R.id.prop1);
+                ImageView myImg = findViewById(R.id.prop3);
                 myImg.setImageDrawable(associate.get(myspinner3.getItemAtPosition(position)));
             }
 
@@ -124,11 +126,11 @@ public class GameActivity extends AppCompatActivity {
 
         });
         Spinner myspinner4 = findViewById(R.id.spinnerChoice4);
-        myspinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        myspinner4.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 myspinner4.getItemAtPosition(position);
-                ImageView myImg = findViewById(R.id.prop1);
+                ImageView myImg = findViewById(R.id.prop4);
                 myImg.setImageDrawable(associate.get(myspinner4.getItemAtPosition(position)));
             }
 

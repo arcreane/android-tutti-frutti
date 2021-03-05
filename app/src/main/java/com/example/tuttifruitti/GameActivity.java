@@ -3,6 +3,8 @@ package com.example.tuttifruitti;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.content.DialogInterface;
@@ -19,6 +21,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Dictionary;
 import java.util.Enumeration;
@@ -31,6 +34,8 @@ import static java.lang.Math.random;
 import static java.time.chrono.JapaneseEra.values;
 
 public class GameActivity extends AppCompatActivity {
+
+    ArrayList<DataSources> dataSourceArrayList;
     String randomFruit1,randomFruit2,randomFruit3,randomFruit4;
     String spinnerChoice1,spinnerChoice2,spinnerChoice3,spinnerChoice4;
     public String[] arrayRandomFruit = {randomFruit1, randomFruit2, randomFruit3, randomFruit4};
@@ -151,8 +156,11 @@ public class GameActivity extends AppCompatActivity {
         });
 
 
-
-
+        RecyclerView rvDataSources = (RecyclerView) findViewById(R.id.recyclerViewData);
+        dataSourceArrayList = DataSources.createsDataSourcesList(1);
+        MyAdapter dataAdapter = new MyAdapter(dataSourceArrayList);
+        rvDataSources.setAdapter(dataAdapter);
+        rvDataSources.setLayoutManager(new LinearLayoutManager(this));
 
 
     }

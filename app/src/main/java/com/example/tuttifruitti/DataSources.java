@@ -36,10 +36,7 @@ public class DataSources {
         for (int i = 1; i <= choice; i++) {
            myDatas.add(new DataSources( "mySpinner1","mySpinner2","mySpinner3","mySpinner3"));
         }
-
         return myDatas;
-
-
     }
 
 }

@@ -207,24 +207,19 @@ public class GameActivity extends AppCompatActivity {
 
 
 
-        //public static String[] getUserEntryChoiceArray() {
-        //return arrayChoices;
-        //}
-
-
-        // Methode pour pour comparer le user choice et le random result
-     public void setScore(){
-
-    for (int i = 1; i <9 ; i++) {
+    // Methode pour incrémenter le score
+    public void setScore() {
+        int scoreVariable = 0;
         TextView score = findViewById(R.id.scoreNumber);
-        score.setText(i);
-
+        scoreVariable ++;
+        score.setText(scoreVariable);
     }
-}
+
      public void setTries(){
 
      }
 
+    // Methode pour pour comparer le user choice et le random result
     public void playGame(){
 
            //if ((randomFruit1.equals(spinnerChoice1) && randomFruit2.equals(spinnerChoice2)) && (randomFruit3.equals(spinnerChoice3)) && (randomFruit4.equals(spinnerChoice4)) ) {
@@ -233,6 +228,7 @@ public class GameActivity extends AppCompatActivity {
         for (int i = 0; i < arrayRandomFruit.length; i++) {
             for (int j = 0; j < arrayChoices.length; j++) {
                 if (arrayRandomFruit[0].equals(arrayChoices[0]) && (arrayRandomFruit[1].equals(arrayChoices[1]))&& (arrayRandomFruit[2].equals(arrayChoices[2]))&& (arrayRandomFruit[3].equals(arrayChoices[3]))) {
+                    setScore();
                     new AlertDialog.Builder(this)
                             .setTitle("Well Done!!! :)")
                             .setMessage("All fruits are well placed ")
@@ -242,7 +238,6 @@ public class GameActivity extends AppCompatActivity {
                                     Intent intent1 = new Intent("com.example.tuttifruitti.Difficulty");
                                     startActivity(intent1);
                                     Toast.makeText(getApplicationContext(),"Please replay again !", Toast.LENGTH_LONG).show();
-                                    setScore();
                                     finish();
                                 }
                             })

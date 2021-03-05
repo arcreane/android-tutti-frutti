@@ -264,7 +264,7 @@ public class GameActivity extends AppCompatActivity {
                 }
                 else if(!(arrayRandomFruit[i].equals(arrayChoices[j])) && (i==j || i!=j)){
                     new AlertDialog.Builder(this)
-                            .setTitle(" OUPS :)")
+                            .setTitle(" OUPS !!! :( ")
                             .setMessage(" OUPS !!! There are No Good CHOICE , Please choose other items !!! ")
                             .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                                 @Override

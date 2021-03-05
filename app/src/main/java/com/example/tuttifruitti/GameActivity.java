@@ -7,10 +7,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
@@ -18,6 +20,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Arrays;
+import java.util.Dictionary;
+import java.util.Enumeration;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 import java.util.Random;
 
@@ -29,11 +35,16 @@ public class GameActivity extends AppCompatActivity {
     String spinnerChoice1,spinnerChoice2,spinnerChoice3,spinnerChoice4;
     public String[] arrayRandomFruit = {randomFruit1, randomFruit2, randomFruit3, randomFruit4};
     public String[] arrayChoices={spinnerChoice1,spinnerChoice2,spinnerChoice3,spinnerChoice4};
+    public Map<String,Drawable > associate;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
         getRandomFruit();
+        associate = new HashMap<>();
+        associate.put(getResources().getStringArray(R.array.fruitsSelection)[0],getResources().getDrawable(R.drawable.prune));
+        associate.put(getResources().getStringArray(R.array.fruitsSelection)[1],getResources().getDrawable(R.drawable.fraise));
+        associate.put(getResources().getStringArray(R.array.fruitsSelection)[2],getResources().getDrawable(R.drawable.orange));
         //getResult();
 
         Button validateChoiceButton = findViewById(R.id.validateChoiceButton);
@@ -61,6 +72,21 @@ public class GameActivity extends AppCompatActivity {
                 Intent intent = new Intent("com.example.tuttifruitti.MainActivity");
                 startActivity(intent);
             }
+        });
+        Spinner myspinner = findViewById(R.id.spinnerChoice1);
+        myspinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                myspinner.getItemAtPosition(position);
+                ImageView myImg = findViewById(R.id.prop1);
+                myImg.setImageDrawable(associate.get(myspinner.getItemAtPosition(position)));
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+
         });
 
         Button changeDifficultyButton = findViewById(R.id.changeDifficultyButton);
@@ -139,6 +165,9 @@ public class GameActivity extends AppCompatActivity {
 
     }
 }
+     public void setTries(){
+
+     }
 
     public void playGame(){
 
@@ -154,7 +183,9 @@ public class GameActivity extends AppCompatActivity {
                             .setPositiveButton("Re-Play", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
-                                    setContentView(R.layout.activity_difficulty);
+                                    Intent intent1 = new Intent("com.example.tuttifruitti.Difficulty");
+                                    startActivity(intent1);
+                                    Toast.makeText(getApplicationContext(),"Please replay again !", Toast.LENGTH_LONG).show();
                                     setScore();
                                     finish();
                                 }
@@ -165,19 +196,37 @@ public class GameActivity extends AppCompatActivity {
                 else if ((arrayRandomFruit[0].equals(arrayChoices[j]) && j!=0 ) || (arrayRandomFruit[1].equals(arrayChoices[j]) && j!=1 ) ||
                 (arrayRandomFruit[2].equals(arrayChoices[j]) && j!=2 ) || (arrayRandomFruit[3].equals(arrayChoices[j]) && j!=3 )){
                     new AlertDialog.Builder(this)
-                            .setTitle(" Well :)")
+                            .setTitle(" OK :)")
                             .setMessage("you have a good Choice in a Bad Place ")
                             .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
+
+                                    Intent intent2 = new Intent("com.example.tuttifruitti.GameActivity");
+                                    startActivity(intent2);
                                     Toast.makeText(getApplicationContext(),"Please try Chosing again !", Toast.LENGTH_LONG).show();
-                                    setContentView(R.layout.activity_game);
                                     finish();
                                 }
                             })
                             .show();
                 }
-                //else if((arrayRandomFruit[1]
+                else if(!(arrayRandomFruit[i].equals(arrayChoices[j])) && (i==j || i!=j)){
+                    new AlertDialog.Builder(this)
+                            .setTitle(" OUPS :)")
+                            .setMessage(" OUPS !!! There are No Good CHOICE , Please choose other items !!! ")
+                            .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+
+                                    Intent intent2 = new Intent("com.example.tuttifruitti.GameActivity");
+                                    startActivity(intent2);
+                                    Toast.makeText(getApplicationContext(),"Choice other items !", Toast.LENGTH_LONG).show();
+                                    finish();
+                                }
+                            })
+                            .show();
+
+                }
 
 
             }

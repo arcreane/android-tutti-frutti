@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Liaison avec l'activité Difficulty
-                Intent intent = new Intent("com.example.tuttifruitti.Difficulty");
+                Intent intent = new Intent("com.example.tuttifruitti.GameActivity");
                 startActivity(intent);
                 }
             });

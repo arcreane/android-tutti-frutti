@@ -5,12 +5,12 @@
     <string name="quitMenu">Quit</string>
     <string-array name="fruitsSelection">
         <item>Plum</item>
-        <item>fraise</item>
+        <item>Strawberry</item>
         <item>Orange</item>
         <item>Raspberry</item>
         <item>Kiwi</item>
         <item>Lemon</item>
         <item>Grape</item>
-        <item>Strawberry</item>
+        <item>Banana</item>
     </string-array>
 </resources>

@@ -45,6 +45,11 @@ public class GameActivity extends AppCompatActivity {
         associate.put(getResources().getStringArray(R.array.fruitsSelection)[0],getResources().getDrawable(R.drawable.prune));
         associate.put(getResources().getStringArray(R.array.fruitsSelection)[1],getResources().getDrawable(R.drawable.fraise));
         associate.put(getResources().getStringArray(R.array.fruitsSelection)[2],getResources().getDrawable(R.drawable.orange));
+        associate.put(getResources().getStringArray(R.array.fruitsSelection)[3],getResources().getDrawable(R.drawable.framboises));
+        associate.put(getResources().getStringArray(R.array.fruitsSelection)[4],getResources().getDrawable(R.drawable.kiwi));
+        associate.put(getResources().getStringArray(R.array.fruitsSelection)[5],getResources().getDrawable(R.drawable.citron));
+        associate.put(getResources().getStringArray(R.array.fruitsSelection)[6],getResources().getDrawable(R.drawable.raisins));
+        associate.put(getResources().getStringArray(R.array.fruitsSelection)[7],getResources().getDrawable(R.drawable.bananes));
         //getResult();
 
         Button validateChoiceButton = findViewById(R.id.validateChoiceButton);
@@ -73,13 +78,58 @@ public class GameActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        Spinner myspinner = findViewById(R.id.spinnerChoice1);
-        myspinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        Spinner myspinner1 = findViewById(R.id.spinnerChoice1);
+        myspinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                myspinner.getItemAtPosition(position);
+                myspinner1.getItemAtPosition(position);
                 ImageView myImg = findViewById(R.id.prop1);
-                myImg.setImageDrawable(associate.get(myspinner.getItemAtPosition(position)));
+                myImg.setImageDrawable(associate.get(myspinner1.getItemAtPosition(position)));
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+
+        });
+        Spinner myspinner2 = findViewById(R.id.spinnerChoice2);
+        myspinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                myspinner2.getItemAtPosition(position);
+                ImageView myImg = findViewById(R.id.prop1);
+                myImg.setImageDrawable(associate.get(myspinner2.getItemAtPosition(position)));
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+
+        });
+        Spinner myspinner3 = findViewById(R.id.spinnerChoice3);
+        myspinner3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                myspinner3.getItemAtPosition(position);
+                ImageView myImg = findViewById(R.id.prop1);
+                myImg.setImageDrawable(associate.get(myspinner3.getItemAtPosition(position)));
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+
+        });
+        Spinner myspinner4 = findViewById(R.id.spinnerChoice4);
+        myspinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                myspinner4.getItemAtPosition(position);
+                ImageView myImg = findViewById(R.id.prop1);
+                myImg.setImageDrawable(associate.get(myspinner4.getItemAtPosition(position)));
             }
 
             @Override

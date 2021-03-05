@@ -79,14 +79,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:minHeight="50dp"
+
             android:orientation="vertical">
 
             <ImageView
                 android:id="@+id/prop2"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@drawable/framboises" />
+                android:src="@drawable/prune"
+                android:minHeight="75dp"/>
 
             <Spinner
                 android:id="@+id/spinnerChoice2"
@@ -105,9 +106,10 @@
 
             <ImageView
                 android:id="@+id/prop3"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@drawable/framboises" />
+                android:minHeight="75dp"
+                android:src="@drawable/prune" />
 
             <Spinner
                 android:id="@+id/spinnerChoice3"
@@ -126,9 +128,10 @@
 
             <ImageView
                 android:id="@+id/prop4"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@drawable/framboises" />
+                android:minHeight="75dp"
+                android:src="@drawable/prune" />
 
             <Spinner
                 android:id="@+id/spinnerChoice4"
